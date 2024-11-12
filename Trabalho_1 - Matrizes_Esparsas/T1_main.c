@@ -3,24 +3,31 @@
 #include"matriz_esparsa.h"
 
 int main() {
-    int linhaA = 5;
-    int colunaA = 5;
+    int linhaA = 6;
+    int colunaA = 6;
 
-    int linhaB = 5;
-    int colunaB = 5;
+    int linhaB = 6;
+    int colunaB = 6;
 
     matriz_espa *A = criaMatriz(linhaA, colunaA);
-    inserirElemento(A, 0, 0, 1);
-    inserirElemento(A, 0, 1, 2);
-    inserirElemento(A, 1, 2, 3);
+    inserirElemento(A, 0, 0, 2);
+    inserirElemento(A, 1, 4, 45);
+    inserirElemento(A, 1, 5, 13);
+    inserirElemento(A, 3, 2, 12);
+    inserirElemento(A, 2, 3, 89);
+    inserirElemento(A, 5, 3, 3);
 
     printf("Matriz A:\n");
     imprimirMatriz(A);
 
     matriz_espa *B = criaMatriz(linhaB, colunaB);
-    inserirElemento(B, 0, 0, 4);
-    inserirElemento(B, 1, 2, 5);
-    inserirElemento(B, 2, 1, 6);
+    inserirElemento(B, 0, 2, 9);
+    inserirElemento(B, 1, 4, 5);
+    inserirElemento(B, 2, 5, 15);
+    inserirElemento(B, 3, 1, 3);
+    inserirElemento(B, 4, 3, 4);
+    inserirElemento(B, 5, 0, 8);
+    inserirElemento(B, 5, 2, 64);
 
     printf("Matriz B:\n");
     imprimirMatriz(B);
@@ -53,6 +60,8 @@ int main() {
 
     apagaMatriz(A);
     apagaMatriz(B);
+    apagaMatriz(transpostaA);
+    apagaMatriz(transpostaB);
     apagaMatriz(produto);
     apagaMatriz(soma);
 
